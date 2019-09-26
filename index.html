@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Jedi Journey</title>
+
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146842391-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-146842391-1');
+		</script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src='libraries/p5.min.js'></script>
+		<script src='libraries/p5.dom.min.js'></script>
+		<script src='libraries/p5.sound.min.js'></script>
+		<script src="libraries/p5.play.js" type="text/javascript"></script>
+		<script src='game.js'></script>
+
+		<style>
+			@font-face{font-family: 'SW Title'; src: url('fonts/SWCrawlTitle.ttf');}
+			@font-face{font-family: 'SW Body'; src: url('fonts/SWCrawlBody.ttf');}
+			body{padding: 0; margin: 0; background-image: url('images/html_background.jpg');}
+			canvas{display: none;}
+
+			h1{font-family: 'SW Title'; color: #ffd700; text-transform: uppercase; margin: 25px 0; text-align: center; letter-spacing: 2px; font-size: 75px;}
+			 p{font-family: 'SW Body'; color: #ffd700; margin: 0; text-align: center; font-size: 25px;}
+
+			#page1{}
+				#vidContainer{position: fixed; top: 0; width: 100vw; height: 100vh; overflow-y: scroll; background-color: #000000;}
+					#opening{width: 100%;}
+					#skip{background: none; border: 5px solid #ffd700; padding: 10px; display: block; margin: 50px auto;}
+					#skip:hover{background-color: #ffd700;}
+						#skip h1{margin: 0; font-size: 50px;text-transform: lowercase;}
+						#skip:hover h1{color: #000000;}
+				#ls_form{margin: 50px auto 0 auto; width: 128vh;}
+					#ls_form input{visibility: hidden;}
+					#ls_form label{margin: 0 5vh;}
+					#ls_form label:hover{cursor: pointer; opacity: .75;}
+						#ls_form label img{height: 65vh;}
+					#ls_form button{background: none; border: 5px solid #ffd700; padding: 10px; display: block; margin: 50px auto;}
+					#ls_form button:hover{background-color: #ffd700;}
+						#ls_form button h1{margin: 0; font-size: 50px;}
+						#ls_form button:hover h1{color: #000000;}
+				hr{border-bottom: #ffd700 5px solid; width: 80vw; margin: 100px auto 50px;}
+				#controller{margin: 0 auto 100px auto; width: 75vw;}
+					#controller div{display:flex; justify-content: space-between;}
+						#controller div img{width: 15vw; height: 100%;}
+						#controller div p{width: 57.5vw; text-align: justify; margin: 75px 0 0 0;}
+				#steamzine{display: flex; justify-content: center; width: 100%; margin: 50px 0;}
+					#steamzine img{height: 250px; display: flex;}
+					#steamzine img:not(:last-child){margin-right: 50px;}
+
+			#page2{display: none;}
+				#levelHeader{text-align: center; margin: 50px 0 0 0; text-transform: lowercase;}
+				#level{margin: 20vh auto 0 auto; width: 747px;}
+					#level button{background: none; border: none; margin: 0 50px; padding: 0;}
+					#level button:hover{opacity: .75;}
+					#level button:focus{outline: none;}
+						#level button p{margin: 25px 0 0 0;}
+
+
+		</style>
+	</head>
+	<body onload='ready()'>
+		<div id='page1'>
+			<div id='vidContainer'>
+				<video id='opening' onended='videoEnd()'>
+					<source src='videos/opening_crawl.mp4' type='video/mp4'>
+				</video>
+				<button id='skip' onclick='videoEnd()'><h1>skip intro</h1></button>
+			</div>
+
+			<h1 id='title'>The Jedi Journey</h1>
+			<p id='subhead'>Time to begin your journey, it is. Pick a lightsaber.</p>
+			<form id='ls_form' onsubmit='askLevel()' method='POST'>
+				<input type='radio' name='lightsaber' id='anakin'><label for='anakin' id='l1' onclick='lightsaber("l1")'><img src='images/anakin.png'></label>
+				<input type='radio' name='lightsaber' id='luke'  ><label for='luke'   id='l2' onclick='lightsaber("l2")'><img src='images/luke.png'  ></label>
+				<input type='radio' name='lightsaber' id='mace'  ><label for='mace'   id='l3' onclick='lightsaber("l3")'><img src='images/mace.png'  ></label>
+				<input type='radio' name='lightsaber' id='obiwan'><label for='obiwan' id='l4' onclick='lightsaber("l4")'><img src='images/obiwan.png'></label>
+				<input type='radio' name='lightsaber' id='vader' ><label for='vader'  id='l5' onclick='lightsaber("l5")'><img src='images/vader.png' ></label>
+				<input type='radio' name='lightsaber' id='kylo'  ><label for='kylo'   id='l6' onclick='lightsaber("l6")'><img src='images/kylo.png'  ></label>
+				<button type='submit' id='submit_button'><h1>Continue</h1></button>
+			</form>
+
+			<hr>
+			<h1 style='text-transform:lowercase;'>My Design Process</h1>
+			<p style='width:75vw;margin:0 auto;text-align:justify;'>
+				I would say that my inspiration for building this game is more than a bit obvious.
+				<br><br>
+				Growing up, I surprisingly didn't watch or engage with <i>Star Wars</i> really at all. However, less than a year ago, I decided that it was high time for me to catch up on this large pop culture phenonmenon. Not only did I catch up, but I became a hard-core fan. <i>The Last Jedi,</i> released just about 2 months ago, was easily one of my favorite movies of the whole <i>Star Wars</i> series, and I am managing to still be fan-girling over it now. Thus, I chose to dedicate this game to my newfound infatuation.
+				<br><br>
+				I was pretty stumped as to what to do at first because my ideas were consistently proving to be beyond my skill level with JavaScript's p5 library. Also, I was limited by both the assignment's requirements, and time. I did however know that I wanted the game to be in an arcade-adventure style, and stuck with that core throughout my trials and errors.
+				<br><br>
+				Unfortunately, this game is still unfinished. I know exactly how I want this game to continue, and do plan on finishing it. However for now, since I now believe I've fullfilled the assignment's requirements, and am already late turning this in (oops), I'll have to complete this at another time.
+				<br><br>
+				Thank you for playing and may the force be with you!
+			</p>
+
+			<hr>
+			<p style='width:75vw;margin:0 auto;text-align:center;'>
+				Huge thank you to the Gallatin STEAM zine for featuring my silly game!!
+			</p>
+			<div id='steamzine'>
+				<img src='images/gallatinsteamzine1.jpg'>
+				<img src='images/gallatinsteamzine2.jpg'>
+				<img src='images/gallatinsteamzine3.jpg'>
+			</div>
+		</div>
+		<div id='page2'>
+			<h1 id='levelHeader'>Pick a level</h1>
+			<div id='level'>
+				<button onclick='showCanvas(0)' id='padawan'>
+					<img src='images/stormtrooper.png'>
+					<p>Padawan</p>
+				</button>
+				<button onclick='showCanvas(1)' id='knight'>
+					<img src='images/bobafett.png'>
+					<p>Knight</p>
+				</button>
+				<button onclick='showCanvas(2)' id='master'>
+					<img src='images/sith.png'>
+					<p>Master</p>
+				</button>
+			</div>
+		</div>
+	</body>
+</html>
