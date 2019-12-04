@@ -1,5 +1,5 @@
 # [The Jedi Journey](https://erinachavez.github.io/the_jedi_journey/)
-The Jedi Journey is an adventure game inspired by the *Star Wars* series, styled in a retro 8-bit aesthetic. I made this game back in 2017, but still enjoy its simplicity and design. Plus seeing how I've developed as a programmer is a nice plus :star:
+The Jedi Journey is an adventure game inspired by the *Star Wars* series, styled in a retro 8-bit aesthetic. I made this game back in 2017, but still enjoy its simplicity and design. Also, seeing how I've developed as a programmer is a nice plus :star:
 
 **Screenshots**
 <br /><br />
