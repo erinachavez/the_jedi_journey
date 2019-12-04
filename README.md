@@ -3,15 +3,15 @@ The Jedi Journey is an adventure game inspired by the *Star Wars* series, styled
 
 **Screenshots**
 <br /><br />
-<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/screenshot1.png" width="291" />
-<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/screenshot3.png" width="291" />
-<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/screenshot2.png" width="291" />
+<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/screenshot1.png" width="33%" />
+<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/screenshot3.png" width="33%" />
+<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/screenshot2.png" width="33%" />
 <br />
 <img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/screenshot5.png" />
 <br /><br />
 
 Also thank you to the Gallatin STEAM zine for featuring my game!
 <br /><br />
-<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/gallatinsteamzine2.jpg" width="291" />
-<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/gallatinsteamzine1.jpg" width="291" />
-<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/gallatinsteamzine3.jpg" width="291" />
+<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/gallatinsteamzine2.jpg" width="33%" />
+<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/gallatinsteamzine1.jpg" width="33%" />
+<img src="https://github.com/erinachavez/the_jedi_journey/blob/gh-pages/images/gallatinsteamzine3.jpg" width="33%" />
